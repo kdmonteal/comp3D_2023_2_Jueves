@@ -116,3 +116,21 @@ function createLights(typeLight) {
           break;
     }
 }
+
+function loadObjMtl(path, nameMTL, nameOBJ) {
+    // 1. Load MTL (Texture)
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setResourcePath(path);
+    mtlLoader.setPath(path);
+    mtlLoader.load(nameMTL, function (material) {
+        material.preload();
+    });
+
+    // 2. Load OBJ (Mesh)
+    var objLoader = new THREE.OBJLoader();
+    objLoader.setPath(path);
+    objLoader.setMaterials(material);
+    objLoader.load(nameOBJ, function (object) {
+        scene.add(object);
+    });
+}
