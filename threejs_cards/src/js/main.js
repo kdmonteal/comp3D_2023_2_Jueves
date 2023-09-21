@@ -9,7 +9,8 @@ var scene = null,
     controls = null,
     builds = 0,
     cube = null,
-    light = null;
+    light = null,
+    stats = null;
 
 const size = 50,
       divisions = 50;
@@ -45,6 +46,9 @@ function createThreeJs() {
     createLights("AmbientLight");
     createLights("PointLight");
     animate();
+
+    // stats = new Stats();
+    // document.getElementById('app').appendChild(stats.dom);
 }
 
 function animate() {
