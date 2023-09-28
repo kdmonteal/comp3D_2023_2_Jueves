@@ -48,6 +48,8 @@ function loadGLTF() {
             gltf.cameras; // Array<THREE.Camera>
             gltf.asset; // Object
 
+            gltf.scene.position.set(0,0,2);
+
         },
         // called while loading is progressing
         function (xhr) {
