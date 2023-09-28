@@ -50,7 +50,7 @@ function createThreeJs() {
     loadObjMtl("../models/OBJ_MTL/personaje/", "Rupert.mtl", "Rupert.obj");
     loadGLTF();
 
-    createCollectibles();
+    createCollectibles(10);
 
     // stats = new Stats();
     // document.getElementById('app').appendChild(stats.dom);

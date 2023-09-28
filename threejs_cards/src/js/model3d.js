@@ -64,9 +64,12 @@ function loadGLTF() {
     );
 }
 
-function createCollectibles() {
+function createCollectibles(quantity) {
 
-    for (var i = 0; i < 9; i++) {
+    var min = -8;
+    var max = 8;
+
+    for (var i = 0; i < quantity; i++) {
         var texture = new THREE.TextureLoader().load("../img/collectible.jpg");
 
         const geometry = new THREE.BoxGeometry( 1, 1, 1 ); 
@@ -75,6 +78,6 @@ function createCollectibles() {
         const cube = new THREE.Mesh( geometry, material ); 
         scene.add( cube );
 
-        cube.position.set(i*3,0.5,0);
+        cube.position.set(Math.floor(Math.random() * (max - min + 1) + min),0.5,Math.floor(Math.random() * (max - min + 1) + min));
       }
 }
