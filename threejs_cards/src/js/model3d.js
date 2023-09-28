@@ -66,8 +66,8 @@ function loadGLTF() {
 
 function createCollectibles(quantity) {
 
-    var min = -8;
-    var max = 8;
+    var min = -15;
+    var max = 15;
 
     for (var i = 0; i < quantity; i++) {
         var texture = new THREE.TextureLoader().load("../img/collectible.jpg");
@@ -78,6 +78,24 @@ function createCollectibles(quantity) {
         const cube = new THREE.Mesh( geometry, material ); 
         scene.add( cube );
 
-        cube.position.set(Math.floor(Math.random() * (max - min + 1) + min),0.5,Math.floor(Math.random() * (max - min + 1) + min));
+        cube.position.set(Math.floor(Math.random() * (max - min + 1) + min),
+                          0.5,
+                          Math.floor(Math.random() * (max - min + 1) + min));
+      }
+}
+
+
+function gameStates(caseSituation) {
+    // game, win, lose
+    switch(caseSituation) {
+        case "win":
+          document.getElementById("winnerScreen").style.display = "block";
+          break;
+        case "lost":
+            document.getElementById("LoserScreen").style.display = "block";
+          break;
+        default:
+            document.getElementById("winnerScreen").style.display = "none";
+            document.getElementById("LoserScreen").style.display = "none";
       }
 }

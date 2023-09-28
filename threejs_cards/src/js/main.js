@@ -52,6 +52,8 @@ function createThreeJs() {
 
     createCollectibles(10);
 
+    gameStates("");
+
     // stats = new Stats();
     // document.getElementById('app').appendChild(stats.dom);
 }
