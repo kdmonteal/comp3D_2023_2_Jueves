@@ -65,10 +65,16 @@ function loadGLTF() {
 }
 
 function createCollectibles() {
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 ); 
-    const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
-    const cube = new THREE.Mesh( geometry, material ); 
-    scene.add( cube );
 
-    cube.position.set(0,0.5,0);
+    for (var i = 0; i < 9; i++) {
+        var texture = new THREE.TextureLoader().load("../img/collectible.jpg");
+
+        const geometry = new THREE.BoxGeometry( 1, 1, 1 ); 
+        const material = new THREE.MeshStandardMaterial( {color: 0xffffff,
+                                                        map: texture} ); 
+        const cube = new THREE.Mesh( geometry, material ); 
+        scene.add( cube );
+
+        cube.position.set(i*3,0.5,0);
+      }
 }
