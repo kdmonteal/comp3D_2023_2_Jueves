@@ -22,8 +22,6 @@ function loadObjMtl(path, nameMTL, nameOBJ) {
     });
 }
 
-loadObjMtl("../models/OBJ_MTL/personaje/", "Rupert.mtl", "Rupert.obj");
-
 function loadGLTF() {
     // Instantiate a loader
     const loader = new THREE.GLTFLoader();
@@ -66,4 +64,11 @@ function loadGLTF() {
     );
 }
 
-loadGLTF();
+function createCollectibles() {
+    const geometry = new THREE.BoxGeometry( 1, 1, 1 ); 
+    const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
+    const cube = new THREE.Mesh( geometry, material ); 
+    scene.add( cube );
+
+    cube.position.set(0,0.5,0);
+}

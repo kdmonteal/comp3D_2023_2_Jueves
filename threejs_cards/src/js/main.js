@@ -31,7 +31,7 @@ function createThreeJs() {
     document.body.appendChild( renderer.domElement );
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
-    camera.position.set(0,8,0);
+    camera.position.set(8,4,-0.2);
     controls.update();
 
     // Grid Helper
@@ -46,6 +46,11 @@ function createThreeJs() {
     createLights("AmbientLight");
     createLights("PointLight");
     animate();
+
+    loadObjMtl("../models/OBJ_MTL/personaje/", "Rupert.mtl", "Rupert.obj");
+    loadGLTF();
+
+    createCollectibles();
 
     // stats = new Stats();
     // document.getElementById('app').appendChild(stats.dom);
