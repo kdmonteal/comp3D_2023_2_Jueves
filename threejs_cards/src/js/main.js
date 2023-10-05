@@ -73,6 +73,8 @@ function createThreeJs() {
 function animate() {
 	requestAnimationFrame( animate );
     // controls.update();
+    
+    movementPlayer();
 	renderer.render( scene, camera );
 }
 

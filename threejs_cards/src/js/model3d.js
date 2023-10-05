@@ -17,6 +17,8 @@ function loadObjMtl(path, nameMTL, nameOBJ) {
         objLoader.setMaterials(material);
         objLoader.load(nameOBJ, function (object) {
             scene.add(object);
+
+            myPlayerMesh = object;
         });
 
     });
@@ -134,7 +136,11 @@ function createPlayerCollider() {
 
 function movementPlayer() {
     if(input.right == 1){
-        
+        myPlayerCollider.rotation.y -= rotSpeed;
+        myPlayerMesh.rotation.y -= rotSpeed;
+    }else if(input.left == 1){
+        myPlayerCollider.rotation.y += rotSpeed;
+        myPlayerMesh.rotation.y += rotSpeed;
     }
 }
 
