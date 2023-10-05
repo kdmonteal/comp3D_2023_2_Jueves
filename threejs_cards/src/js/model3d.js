@@ -141,6 +141,11 @@ function movementPlayer() {
     }else if(input.left == 1){
         myPlayerCollider.rotation.y += rotSpeed;
         myPlayerMesh.rotation.y += rotSpeed;
+    }else if(input.up == 1){
+        myPlayerCollider.position.z -= Math.cos(camera.rotation.y) * speed;
+        myPlayerCollider.position.z -= Math.sin(camera.rotation.y) * speed;
+        myPlayerMesh.position.z -= Math.cos(camera.rotation.y) * speed;
+        myPlayerMesh.position.z -= Math.sin(camera.rotation.y) * speed;
     }
 }
 
