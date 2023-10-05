@@ -15,7 +15,7 @@ var scene = null,
 // To Move Player
 var myPlayerCollider = null,
     myPlayerMesh = null,
-    input = {left:0, rigth:0, up:0, down:0},
+    input = {left:0, right:0, up:0, down:0},
     rotSpeed = 0.05,
     speed = 0.5;
 

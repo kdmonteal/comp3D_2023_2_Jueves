@@ -132,11 +132,17 @@ function createPlayerCollider() {
     scene.add( myPlayerCollider );
 }
 
+function movementPlayer() {
+    if(input.right == 1){
+        
+    }
+}
+
 document.addEventListener('keydown', (e)=>{
     console.log("Undio: "+e.key);
     switch(e.key) {
         case "d":  // Right
-            input.rigth = 1;
+            input.right = 1;
           break;
         case "a": // Left
             input.left = 1;
@@ -145,7 +151,7 @@ document.addEventListener('keydown', (e)=>{
             input.up = 1;
           break;
         case "s": // Down
-            input.rigth = 1;
+            input.down = 1;
           break;
       }
       
@@ -154,7 +160,7 @@ document.addEventListener('keydown', (e)=>{
 document.addEventListener('keyup', (e)=>{
     switch(e.key) {
         case "d":  // Right
-            input.rigth = 0;
+            input.right = 0;
           break;
         case "a": // Left
             input.left = 0;
@@ -163,7 +169,7 @@ document.addEventListener('keyup', (e)=>{
             input.up = 0;
           break;
         case "s": // Down
-            input.rigth = 0;
+            input.down = 0;
           break;
       }
 });
