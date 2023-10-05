@@ -10,7 +10,8 @@ var scene = null,
     builds = 0,
     cube = null,
     light = null,
-    stats = null;
+    stats = null,
+    sound3D = null;
 
 // To Move Player
 var myPlayerCollider = null,
@@ -18,6 +19,7 @@ var myPlayerCollider = null,
     input = {left:0, right:0, up:0, down:0},
     rotSpeed = 0.05,
     speed = 0.5;
+
 
 const size = 50,
       divisions = 50;

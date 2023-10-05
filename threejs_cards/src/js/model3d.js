@@ -135,17 +135,22 @@ function createPlayerCollider() {
 }
 
 function movementPlayer() {
-    if(input.right == 1){
+    if(input.right == 1){ // Rotation Right
         myPlayerCollider.rotation.y -= rotSpeed;
         myPlayerMesh.rotation.y -= rotSpeed;
-    }else if(input.left == 1){
+    } else if(input.left == 1) { // Rotation left
         myPlayerCollider.rotation.y += rotSpeed;
         myPlayerMesh.rotation.y += rotSpeed;
-    }else if(input.up == 1){
-        myPlayerCollider.position.z -= Math.cos(camera.rotation.y) * speed;
-        myPlayerCollider.position.z -= Math.sin(camera.rotation.y) * speed;
-        myPlayerMesh.position.z -= Math.cos(camera.rotation.y) * speed;
-        myPlayerMesh.position.z -= Math.sin(camera.rotation.y) * speed;
+    } else if(input.up == 1){ // movement up
+        myPlayerCollider.position.z -= Math.cos(myPlayerCollider.rotation.y) * speed;
+        myPlayerCollider.position.x -= Math.sin(myPlayerCollider.rotation.y) * speed;
+        myPlayerMesh.position.z -= Math.cos(myPlayerMesh.rotation.y) * speed;
+        myPlayerMesh.position.x -= Math.sin(myPlayerMesh.rotation.y) * speed;
+    } else if(input.down == 1){ // movement down
+        myPlayerCollider.position.z += Math.cos(myPlayerCollider.rotation.y) * speed;
+        myPlayerCollider.position.x += Math.sin(myPlayerCollider.rotation.y) * speed;
+        myPlayerMesh.position.z += Math.cos(myPlayerMesh.rotation.y) * speed;
+        myPlayerMesh.position.x += Math.sin(myPlayerMesh.rotation.y) * speed;
     }
 }
 
