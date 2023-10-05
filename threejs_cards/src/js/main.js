@@ -12,6 +12,13 @@ var scene = null,
     light = null,
     stats = null;
 
+// To Move Player
+var myPlayerCollider = null,
+    myPlayerMesh = null,
+    input = {left:0, rigth:0, up:0, down:0},
+    rotSpeed = 0.05,
+    speed = 0.5;
+
 const size = 50,
       divisions = 50;
 
@@ -30,9 +37,11 @@ function createThreeJs() {
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    camera.position.set(8,4,-0.2);
-    controls.update();
+    // controls = new THREE.OrbitControls(camera, renderer.domElement);
+    // camera.position.set(8,4,-0.2);
+    camera.position.set(0,7,30);
+    // camera.rotation.x = Math.PI*-1;
+    // controls.update();
 
     // Grid Helper
     const gridHelper = new THREE.GridHelper( size, divisions );
@@ -63,7 +72,7 @@ function createThreeJs() {
 
 function animate() {
 	requestAnimationFrame( animate );
-    controls.update();
+    // controls.update();
 	renderer.render( scene, camera );
 }
 

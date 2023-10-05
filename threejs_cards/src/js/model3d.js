@@ -127,7 +127,43 @@ function startTimer(duration) {
 function createPlayerCollider() {
     const geometry = new THREE.BoxGeometry( 2, 5, 3 ); 
     const material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true} ); 
-    const cube = new THREE.Mesh( geometry, material ); 
-    cube.position.y = 2.5;
-    scene.add( cube );
+    myPlayerCollider = new THREE.Mesh( geometry, material ); 
+    myPlayerCollider.position.y = 2.5;
+    scene.add( myPlayerCollider );
 }
+
+document.addEventListener('keydown', (e)=>{
+    console.log("Undio: "+e.key);
+    switch(e.key) {
+        case "d":  // Right
+            input.rigth = 1;
+          break;
+        case "a": // Left
+            input.left = 1;
+          break;
+        case "w": // Up
+            input.up = 1;
+          break;
+        case "s": // Down
+            input.rigth = 1;
+          break;
+      }
+      
+});
+
+document.addEventListener('keyup', (e)=>{
+    switch(e.key) {
+        case "d":  // Right
+            input.rigth = 0;
+          break;
+        case "a": // Left
+            input.left = 0;
+          break;
+        case "w": // Up
+            input.up = 0;
+          break;
+        case "s": // Down
+            input.rigth = 0;
+          break;
+      }
+});
