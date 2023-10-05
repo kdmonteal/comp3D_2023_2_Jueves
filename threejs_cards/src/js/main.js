@@ -52,8 +52,11 @@ function createThreeJs() {
 
     createCollectibles(10);
 
-    gameStates("");
+    // Establecer la duración del temporizador en segundos (por ejemplo, 60 segundos)
+    const duration = 60;
+    startTimer(duration);
 
+    createPlayerCollider();
     // stats = new Stats();
     // document.getElementById('app').appendChild(stats.dom);
 }

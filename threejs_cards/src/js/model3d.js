@@ -99,3 +99,35 @@ function gameStates(caseSituation) {
             document.getElementById("LoserScreen").style.display = "none";
       }
 }
+
+// Define una función para iniciar el temporizador
+function startTimer(duration) {
+    let timer = duration;
+    const countdown = document.getElementById('countdown');
+
+    function updateTimer() {
+        countdown.textContent = timer;
+        if (timer <= 0) {
+            // Detener el temporizador
+            clearInterval(interval);
+            // Mostrar #losepage
+            gameStates("lost");
+        }
+        timer--;
+    }
+
+    // Actualizar el temporizador inicialmente
+    updateTimer();
+
+    // Establecer un intervalo para actualizar el temporizador cada 1000 milisegundos (1 segundo)
+    const interval = setInterval(updateTimer, 1000);
+}
+
+// Create Player with movement (Without)
+function createPlayerCollider() {
+    const geometry = new THREE.BoxGeometry( 2, 5, 3 ); 
+    const material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true} ); 
+    const cube = new THREE.Mesh( geometry, material ); 
+    cube.position.y = 2.5;
+    scene.add( cube );
+}
