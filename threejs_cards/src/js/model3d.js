@@ -17,7 +17,7 @@ function loadObjMtl(path, nameMTL, nameOBJ) {
         objLoader.setMaterials(material);
         objLoader.load(nameOBJ, function (object) {
             scene.add(object);
-
+            // object.rotation.y = -1*Math.PI/2;
             myPlayerMesh = object;
         });
 
@@ -152,6 +152,10 @@ function movementPlayer() {
         myPlayerMesh.position.z += Math.cos(myPlayerMesh.rotation.y) * speed;
         myPlayerMesh.position.x += Math.sin(myPlayerMesh.rotation.y) * speed;
     }
+}
+
+function initSound3D() {
+    
 }
 
 document.addEventListener('keydown', (e)=>{
