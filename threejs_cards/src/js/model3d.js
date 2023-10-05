@@ -155,7 +155,12 @@ function movementPlayer() {
 }
 
 function initSound3D() {
-    
+    sound3D = new Sound(["../sounds/rain.mp3"], 80, scene,{
+        debug:true,
+        position: {x:0, y:4, z:0}
+    });
+
+    sound3D.play();
 }
 
 document.addEventListener('keydown', (e)=>{

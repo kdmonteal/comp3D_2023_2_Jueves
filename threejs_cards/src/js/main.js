@@ -56,7 +56,6 @@ function createThreeJs() {
     // To call
     createLights("AmbientLight");
     createLights("PointLight");
-    animate();
 
     loadObjMtl("../models/OBJ_MTL/personaje/", "Rupert.mtl", "Rupert.obj");
     loadGLTF();
@@ -68,6 +67,10 @@ function createThreeJs() {
     startTimer(duration);
 
     createPlayerCollider();
+
+    initSound3D();
+    animate();
+
     // stats = new Stats();
     // document.getElementById('app').appendChild(stats.dom);
 }
@@ -75,7 +78,7 @@ function createThreeJs() {
 function animate() {
 	requestAnimationFrame( animate );
     // controls.update();
-    
+    sound3D.update(myPlayerCollider);
     movementPlayer();
 	renderer.render( scene, camera );
 }
