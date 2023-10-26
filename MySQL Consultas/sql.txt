@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `mydb`.`player` (
+  `idplayer` INT NOT NULL AUTO_INCREMENT,
+  `nickname` VARCHAR(45) NOT NULL,
+  `points` INT NOT NULL,
+  PRIMARY KEY (`idplayer`))
+ENGINE = InnoDB
