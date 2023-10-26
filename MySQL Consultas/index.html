@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>My first game</title>
+  <link rel="stylesheet" href="./resources/styles/style.css">
+
+  <script src="./src/main.js"></script>
+  <script src="./src/jquery-3.1.0.min.js"></script> <!--add jquery-->
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>My first game with DB</h3>
+    <h4>Interact with the game and you will be surprised!</h4>
+    <fieldset>
+      <input id="nicknameGet" name="nicknameGet" placeholder="nickname" type="text" tabindex="1" required autofocus>
+      <input id="pointsGet" name="pointsGet" type="hidden" value="0">
+    </fieldset>
+    <fieldset>
+      <button class="myBtn" name="submit" type="button" id="contact-submit" data-submit="...Sending" onclick="insertData()">Submit</button>
+    </fieldset>
+  </form>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
